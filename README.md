@@ -1,6 +1,9 @@
 # Text_Summarizer
 This project is implemented to summarize original text of a given article. 
 
+  <h1>Tools:</h1>
+  Python, Flask, Spyder, HTML, CSS, Javascript, Jupyter Notebook, Numpy, Pandas, Sklearn, Matplotlib, Seaborn
+
 <h1>Input:</h1>
 <p>Input of this project is URL of the original text and a threshold that user can set to define length of summary.</p>
 
