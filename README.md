@@ -19,4 +19,5 @@ Then based on the user defined threshold, text summary along with statistical re
 		<li><a href="/textRank">Text Rank</a></li>
 	</ul>
 
-Finally, this project is implemented in form of a machine learning web applications. So, any user can run this project in my website at http://tednaseri.pythonanywhere.com/
+<h1>Web Application:</h1>
+<p>Finally, this project is implemented in form of a machine learning web applications. So, any user can run this project in my website at http://tednaseri.pythonanywhere.com/</p>
