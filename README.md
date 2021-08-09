@@ -6,7 +6,9 @@ Input of this project is URL of the original text and a threshold that user can 
 After reading the original text, I used different techniques of Natural Language Processing (NLP) to preprocess the text including:<br>
 Stop words, numbers, special characters, stem of words, etc.
 
-Then sentences will be tokenized, and importance of each sentence will be calculated and sorted. Then based on the user defined threshold, text summary along with statistical report of the original text will be generated.
+Then sentences will be tokenized, and importance of each sentence will be calculated and sorted. It should be noted that different algorithms calculate the importance of each sentence differenly. 
+
+Then based on the user defined threshold, text summary along with statistical report of the original text will be generated.
 
 Implemented Algorithms: 4 algorithms of Word-Frequency, TF-IDF, Lex-Rank, Text-Rank have been implemented.
 
