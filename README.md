@@ -3,7 +3,7 @@ This project is implemented to summarize original text of a given article.
 
 Input of this project is URL of the original text and a threshold that user can set to define length of summary.
 
-After reading the original text, I used different techniques of natural language processing to preprocess the text including:
+After reading the original text, I used different techniques of Natural Language Processing (NLP) to preprocess the text including:<br>
 stop words, numbers, special characters, stem of words, etc.
 
 Then sentences will be tokenized, and importance of each sentence will be calculated and sorted. Then based on the user defined threshold, text summary along with statistical report of the original text will be generated.
