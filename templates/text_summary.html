@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block navMenueHeader %}
+	<nav class="navbar" id="navbartop">
+    <div class="navbar_container">
+      <div class="nav-left">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      </div>
+
+      <div class="nav-right">
+      <ul>
+              <li><span id="datetime"></span></li>
+          </ul>
+      </div>
+    <script>
+    var dt = new Date();   
+    const monthLst = ['January', 'February', 'March', 'April', 'May', 'June',
+                   'July', 'August', 'September', 'October', 'November', 'December']
+
+    const dayLst = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    var month = monthLst[dt.getMonth()]
+    var dayofWeek = dayLst[dt.getDay()]
+    var year = dt.getFullYear();
+    var dayofMonth = dt.getDate();
+    dayofMonth = dayofMonth.toString();
+    year = year.toString();
+    var printingDate =dayofWeek +", " + month + "-" + dayofMonth + "-" + year;
+    document.getElementById('datetime').innerHTML=printingDate;
+    </script>
+
+    </div>
+  </nav>
+{% endblock %}
+
+
+{% block navMenue %}
+	<nav class="navbar">
+		<div class="navbar_container">
+			<ul>
+				<li><a class="current" href="#">Home</a></li>
+				<li><a href="/wordFreq">Word Frequency</a></li>
+				<li><a href="/tf-idf">TF-IDF</a></li>
+				<li><a href="/lexRank">Lex Rank</a></li>
+				<li><a href="/textRank">Text Rank</a></li>
+			</ul>
+		</div>
+	</nav>
+{% endblock %}
+
+
+
+{% block content %}
+<br>
+<p style="font-size: 28px; font-weight: bold; color: #0000CD; text-align: center; margin-bottom: 40px;">Automatic Text Summarization</p>
+
+<section id="home-info" class="home-content">
+    <div class="home-content">	            
+    <h1>Welcome</h1>
+		<p>This is an online automatic text summarization tool; The autosummarizer tool helps to summarize text of articles by focusing on important sentences. The importance of a sentence within a given text can be defined differently. In fact, the importance as a metric depends on the applied Natural Language Processing (NLP) algorithms. As a result, different algorithms will calculate different importance score for sentences which leads to different final summaries.</p>
+
+		
+		<figure class='image_div'>
+  <img src="/static/images/summarizer/text_summarizer.jpg" alt="Distribution of catergorica variables" style="max-width: 700px;max-height: 200px;min-height: 230px; margin-left: auto; margin-right: auto;">
+    <figcaption>Figure 1. An schematic of text summarization for a given articel.</figcaption>
+</figure>
+
+    <h1>Different Approaches of Text Summarization:</h1>
+    <p>Generally, there are two main strategies for text summarization which are  are "Extractive Text Summarization" and "Abstractive Text Summarization". In the following section a brief explanation about these approaches are provided.</p>
+		<h2>Extractive Text Summarization:</h2>
+		<p>	It is the traditional method developed first. The main objective is to identify the significant sentences of the text and add them to the summary. You need to note that the summary obtained contains exact sentences from the original text. It should be noted that in this application, the extractive text summarization is used. <a href="https://en.wikipedia.org/wiki/Automatic_summarization#Extraction-based_summarization"> Read more.</a></p>
+		
+		<h2>Abstractive Text Summarization:</h2>	
+		<p>It is a more advanced method, many advancements keep coming out frequently(I will cover some of the best here). The approach is to identify the important sections, interpret the context and reproduce in a new way. This ensures that the core information is conveyed through shortest text possible. Note that here, the sentences in summary are generated, not just extracted from original text. <a href='https://en.wikipedia.org/wiki/Automatic_summarization#Abstraction-based_summarization'> Read more.</a></p>
+
+
+		<h1>Tools:</h1>
+		Python, Flask, Spyder, HTML, CSS, Javascript, Jupyter Notebook, Numpy, Pandas, Sklearn, Matplotlib, Seaborn
+
+		<h2>General Methodology:</h2>
+		<p>Figure 2. shows the orders of different steps to summarize a given text. It is started from input text to the final summary. Except for calculation of sentences' importance, the rest of methodology are the same for all implemented algorithms. However, each NLP algorithm has its own concept for measuring the importance. Because of that different algorithms lead to different extracted summary.</p>
+    </div>
+	<figure class='image_div'>
+  <img src="/static/images/summarizer/methodology.png" alt="Distribution of catergorica variables" style="max-width: 500px;max-height: 400px;min-height: 230px; margin-left: auto; margin-right: auto;">
+    <figcaption>Figure 2. Orders of different steps to summarize a given text; From input text to final summary.</figcaption>
+  </figure>
+
+
+	<h1>Four steps to get summary:</h1>
+	<p> This machine learning project is deployed in form of a web application. Therefore, any user can run the project to summarize different articles using the second menue on top of this web page. To start the summarization process, first the user should select one of the provided algoritms. After that, the URL of an article (usually from wikipedia) should be added. Next step is setting the level of summarization. This can be done by setting number of sentence in finaly summary or a threshold. The last step is submitting the filled form. After submission the form, the application will automatically summarized text and returns summary along with the statistical report of the original text. FIgure 3 shows an schematic of these steps for geting summary of a given article.</p>
+		
+  <figure class='image_div'>
+  <img src="/static/images/summarizer/user_experience.png" alt="User Experience" style="max-width: 800px;max-height: 100px; margin-left: auto; margin-right: auto;">
+    <figcaption>Figure 3. Schematic of user experience to get summary of a given article.</figcaption>
+  </figure>
+
+  <h1>Interfaces of the Deployed Web Application:</h1>
+	<p> Figure 4 shows the interface of the submitting form. On top of the form, the selected algorithm is written. In this example, TF-IDF algorithm is selected. After entering the article URL and length of summary, by clicking on submit button, the form will be submitted to the server. To continue, Figure 5 shows the interface example of the result. In this example, TF-IDF algorithm is selected to summarize a Wikipedia article about "Data Science". As it is observable, final summary and original text are shown along with some statistical reports of the original text.</p>
+		
+  <figure class='image_div'>
+  <img src="/static/images/summarizer/submitting_form.png" alt="Submitting Form" style="max-width: 800px;max-height: 400px; margin-left: auto; margin-right: auto;">
+    <figcaption>Figure 4. Interface example of the submitting form. In this example, TF-IDF algorithm is selected.</figcaption>
+  </figure>
+
+<figure class='image_div' style="margin-top: 25px;">
+  <img src="/static/images/summarizer/result.png" alt="Result interface example" style="max-width: 900px;max-height: 550px; margin-left: auto; margin-right: auto;">
+    <figcaption>Figure 5. Interface example of the result. In this example, TF-IDF algorithm is selected to summarize a Wikipedia article about "Data Science".</figcaption>
+  </figure>
+
+  <h1>Implemented Algorithms:</h1>
+	<p>In this projects the followin four NLP algorithms are implemented. It is an object-oriented code where different classes are defined and used. Since the project is employed in form of a web application, you can run the project by clicking on each algorithm. (Due to the very large size of the required file for "text-rank" algorithm, it is not loaded online. However the source code is accessible in my GitHub account)</p>
+	<ul>
+		<li><a href="/wordFreq">Word Frequency</a></li>
+		<li><a href="/tf-idf">TF-IDF</a></li>
+		<li><a href="/lexRank">Lex Rank</a></li>
+		<li><a href="/textRank">Text Rank</a></li>
+	</ul>
+
+<h1>Source Code:</h1>
+<p>The source code of this project is shared in my GitHub account at <a href="https://github.com/tednaseri/Text_Summarizer"  target="_blank" class='run_project'style="font-weight: bold; font-style: italic;font-size: 14px;">github.com/tednaseri/Text_Summarizer.</a></p>
+
+</section>
+{% endblock %}
