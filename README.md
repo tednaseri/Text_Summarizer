@@ -4,7 +4,7 @@
 # Files and Folders in this Repository:
 1) text_summarizer: This file includes machine learning codes for implementation of different algorithms along with Flask web application.
 2) static/css/style.css: This file includes css file for the interface of the website.
-3) templates: Inside templates, there are 4 HTML files for the web pages.
+3) templates: Inside templates, there are 7 HTML files for the web pages.
 
 # More Details:
 More details is provided in my personal website at http://tednaseri.pythonanywhere.com/text_summarizer</p>
