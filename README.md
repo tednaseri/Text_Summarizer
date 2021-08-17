@@ -7,4 +7,4 @@
 3) templates folder: Inside templates, there are 7 HTML files for the web pages.
 
 # More Details:
-<p>More details is provided in my personal website at https://www.tednaseri.com/text_summarizer</p>
+<p>More details is provided in my personal website at https://www.tednaseri.com/text_summary</p>
